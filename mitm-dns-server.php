@@ -92,8 +92,8 @@ function domain_pack($id, $domain, $ip)
 	$pack_buf .= "\x00";
 	$pack_buf .= pack("n2", 1, 1);
 	//NAME   TYPE   CLASS    TTL    RDLENGTH    RDATA
-	//0x0cc0  1       1       206      4          ip    
-	$pack_buf .= pack("n3N1n1", 0xc00c, 1, 1, 0xce, 4);
+	//0x0cc0  1       1      600      4          ip    
+	$pack_buf .= pack("n3N1n1", 0xc00c, 1, 1, 600, 4);
 	$pack_buf .= inet_pton($ip);
 	return $pack_buf;
 }
